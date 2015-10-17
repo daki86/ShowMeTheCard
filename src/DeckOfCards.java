@@ -5,7 +5,7 @@ public class DeckOfCards {
 	private ArrayList<Card> deck;
 	private Random getACardIndex;
 	
-	DeckOfCards(){
+	public DeckOfCards(){
 		deck = new ArrayList<Card>();
 		String nameOfSuit = " ";
 		

@@ -1,20 +1,9 @@
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) {
-		DeckOfCards deck = new DeckOfCards();
-		//deck.showDeckOfCards();
+		// TODO Auto-generated method stub
 		
-		System.out.println(deck.dealOneCard());
-		System.out.println(deck.dealOneCard());
-		System.out.println(deck.dealOneCard());
-		System.out.println(deck.dealOneCard());
-		System.out.println(deck.dealOneCard());
-		System.out.println(deck.dealOneCard());
-		System.out.println();
-		
-		
-		deck.showDeckOfCards();
 	}
 
 }
