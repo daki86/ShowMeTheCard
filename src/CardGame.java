@@ -41,10 +41,6 @@ public class CardGame {
 		return listOfPlayers.size();
 	}
 	
-	public void deal(){
-		System.out.print(deck.dealOneCard());
-	}
-	
 	public void showListOfPlayers(){
 		for(Player player : listOfPlayers){
 			System.out.println(player.getName());

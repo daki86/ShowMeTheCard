@@ -8,6 +8,17 @@ public class Card {
 		this.suit = suit;
 	}
 	
+	public String getColor(){
+		String color = " ";
+		
+		if(this.suit.equals("Heart") || this.suit.equals("Dimond")){
+			color = "Red";
+		}else if(this.suit.equals("Spade") || this.suit.equals("Club")){
+			color = "Black";
+		}
+		return color;
+	}
+	
 	public void setValue(int value){
 		this.value = value;
 	}
