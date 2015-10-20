@@ -4,18 +4,48 @@ import java.util.Scanner;
 public class CardGame {
 	private DeckOfCards deck;
 	private ArrayList<Player> listOfPlayers;
+	private Player computer;
 	
 	public CardGame(){
 		deck = new DeckOfCards();
 		listOfPlayers = new ArrayList<Player>();
+		computer = new Player("Computer");
 	}
 	
 	public void addAPlayerToTheList( String name ){
 		listOfPlayers.add(new Player(name));
 	}
 	
-	public Player getAPlayerFromTheList( int playerIndex ){
+	public Player getAPlayerFromTheListByIndex( int playerIndex ){
 		return listOfPlayers.get(playerIndex);
+	}
+		
+	public Player getComputer(){
+		return computer;
+	}
+	
+	public int getAPlayerIndexFromTheListByName( String playerName ){		
+		int playerIndex = 0;
+		
+		for(Player player : listOfPlayers){			
+			if(player.getName().equalsIgnoreCase(playerName)){
+				break;
+			}
+			playerIndex++;
+		}
+		return playerIndex;
+	}
+	
+	public boolean CheckIfPlayerIsOnTheList( String playerName ){		
+		boolean foundPlayer = false;
+		
+		for(Player player : listOfPlayers){			
+			if(player.getName().equalsIgnoreCase(playerName)){
+				foundPlayer = true;
+				break;
+			}
+		}
+		return foundPlayer;
 	}
 	
 	public void removeAPlayerFromTheListByIndex( int playerIndex ){
@@ -53,6 +83,11 @@ public class CardGame {
 		for(Player player : listOfPlayers){
 			System.out.println(player.getName());
 		}
+	}
+	
+	public void showComputerTotWins(){
+		System.out.println("\n"+computer.getName());
+		System.out.println("Total wins: "+computer.getTotWins());
 	}
 	
 	public void showListOfPlayersAndWins(){
