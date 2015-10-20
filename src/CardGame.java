@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CardGame {
 	private DeckOfCards deck;
@@ -21,16 +22,23 @@ public class CardGame {
 		listOfPlayers.remove(playerIndex);
 	}
 	
-	public void removeAPlayerFromTheListByName( String playerName ){
+	public boolean removeAPlayerFromTheListByName( String playerName ){
+		boolean playerRemoved = false;
 		int playerIndex = 0;
 		
 		for(Player player : listOfPlayers){			
 			if(player.getName().equalsIgnoreCase(playerName)){
 				listOfPlayers.remove(playerIndex);
+				playerRemoved = true;
 				break;
 			}
 			playerIndex++;
 		}
+		return playerRemoved;
+	}
+	
+	public void removeAllPlayersFromTheList(){
+		listOfPlayers.removeAll(listOfPlayers);
 	}
 	
 	public DeckOfCards getDeckOfCards(){
@@ -47,7 +55,20 @@ public class CardGame {
 		}
 	}
 	
+	public void showListOfPlayersAndWins(){
+		for(Player player : listOfPlayers){
+			System.out.println("\n"+player.getName());
+			System.out.println("Total wins: "+player.getTotWins());
+		}
+	}
+	
 	public void showDeck(){
 		deck.showDeckOfCards();
+	}
+	
+	public void pressAnyKeyToContinue(){ 
+		System.out.println("Press enter to deal next round");
+		Scanner keyboard = new Scanner(System.in);
+		keyboard.nextLine();
 	}
 }

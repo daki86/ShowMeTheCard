@@ -40,6 +40,10 @@ public class DeckOfCards {
 		return card;
 	}
 	
+	public void returnACardToDeck(Card card){
+		deck.add(card);
+	}
+	
 	public void showDeckOfCards(){
 		for(int cardIndex = 0; cardIndex < deck.size(); cardIndex++){
 			System.out.println(deck.get(cardIndex));
